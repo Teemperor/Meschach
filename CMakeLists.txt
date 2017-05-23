@@ -81,6 +81,18 @@ if(COMPLEX_OPTION)
 	set (sources_files ${sources_files} ${ZLIST1} ${ZLIST2})
 endif(COMPLEX_OPTION)
 
-add_library(meschach ${sources_files})
-
+add_library(meschach SHARED ${sources_files})
+install(TARGETS meschach LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+install(DIRECTORY
+       matrix.h
+       matrix2.h
+       machine.h
+       meminfo.h
+       oldnames.h
+       sparse.h
+       sparse2.h
+       zmatrix.h
+       zmatrix2.h
+       DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
 
