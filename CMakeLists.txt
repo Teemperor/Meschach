@@ -82,17 +82,10 @@ if(COMPLEX_OPTION)
 endif(COMPLEX_OPTION)
 
 add_library(meschach SHARED ${sources_files})
-install(TARGETS meschach LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-install(DIRECTORY
-       matrix.h
-       matrix2.h
-       machine.h
-       meminfo.h
-       oldnames.h
-       sparse.h
-       sparse2.h
-       zmatrix.h
-       zmatrix2.h
-       DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
+ininstall(TARGETS meschach
+    ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(FILES #{HLIST} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
 
