@@ -86,6 +86,6 @@ install(TARGETS meschach
     ARCHIVE  DESTINATION lib
     LIBRARY  DESTINATION lib
     RUNTIME  DESTINATION bin)
-install(FILES ${HLIST} DESTINATION include)
+install(FILES ${HLIST} DESTINATION meschach/include)
 
 
